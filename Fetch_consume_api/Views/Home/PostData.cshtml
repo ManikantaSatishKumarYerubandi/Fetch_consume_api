@@ -8,8 +8,20 @@
         fetch(url).then(response=>response.json())
             .then(responseData =>{
                 // write code to display the data in table
-                alert("Success -got the data");
-                console.log(responseData);
+                //alert("Success -got the data");
+                //console.log(responseData);
+                for (var i=0;i<responseData.length;i++)
+                {
+                    $("table").append("<tr>"+
+                    "<td>"+responseData[i].id+"</td>" +
+                     "<td>" + responseData[i].userId + "</td>" +
+                        "<td>" + responseData[i].title + "</td>" +
+                        "<td>" + responseData[i].body + "</td>" +
+
+
+                    +"</tr>")
+
+                }
             })
             .catch(err =>{
                 alert("Error!!!!");
@@ -17,3 +29,7 @@
             })
     }
 </script>
+
+<button class="btn btn-primary" onclick="getPostUserData()">Show Post</button>
+
+<table class="table table-bordered"></table>

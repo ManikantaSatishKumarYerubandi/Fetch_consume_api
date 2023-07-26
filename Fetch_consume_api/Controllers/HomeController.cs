@@ -14,7 +14,7 @@ namespace Fetch_consume_api.Controllers
         }
         public IActionResult User()
         {
-            return User();
+            return View();
         }
         public HomeController(ILogger<HomeController> logger)
         {
