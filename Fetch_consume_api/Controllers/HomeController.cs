@@ -16,6 +16,11 @@ namespace Fetch_consume_api.Controllers
         {
             return View();
         }
+
+        public IActionResult Product()
+        {
+            return View();
+        }
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;

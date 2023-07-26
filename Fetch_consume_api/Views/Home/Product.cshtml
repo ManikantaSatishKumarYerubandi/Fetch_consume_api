@@ -1,0 +1,32 @@
+﻿<h1 style="text-align:center">Product List</h1>
+
+<script>
+    function getProduct()
+    {
+        var url = "https://fakestoreapi.com/products";
+
+        fetch(url).then(dat => dat.json())
+            .then(results => {
+                for (var i = 0; i < results.length; i++) {
+                    $("#parentDiv").append("<div style='background:grey'>" +
+                        "<h1>" + results[i].id + "</h1>" +
+                        "<h3>" + results[i].title + "</h3>" +
+                        "<h3>" + results[i].price + "</h3>" +
+                        "<h3>" + results[i].description + "</h3>" +
+                        "<h3>" + results[i].category + "</h3>" +
+                        
+                        "<hr/>"
+                        + "</div>"
+                    )
+                }
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+</script>
+
+
+<button class="btn btn-danger" onclick="getProduct()">Show Product</button>
+
+<div id="parentDiv"></div>
